@@ -1,0 +1,26 @@
+.mainConteiner {
+   max-width: 1200px;
+   background-color: aquamarine;
+   margin: 0 auto;
+
+}
+
+.containsAnimeList {
+   max-width: 700px;
+   background: pink;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+
+}
+
+.AnimeCard {
+   max-width: 600px;
+   background-color: crimson;
+   border: solid 2px black;
+}
+
+.AnimeCoverImage {
+   width: 284px;
+   height: 402px;
+}

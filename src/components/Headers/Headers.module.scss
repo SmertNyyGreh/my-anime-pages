@@ -1,0 +1,17 @@
+.headerUl {
+   background-color: darkcyan;
+   list-style: none;
+   max-width: 1200px;
+   height: 50px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   font-style: oblique;
+   margin: 0 auto;
+
+}
+
+.headerUlLink {
+   text-decoration: none;
+   color: black;
+}
