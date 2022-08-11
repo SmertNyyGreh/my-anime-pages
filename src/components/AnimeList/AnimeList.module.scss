@@ -1,0 +1,65 @@
+.mainConteiner {
+   max-width: 700px;
+   // background-color: aquamarine;
+   margin: 0 auto;
+   .containsAnimeList {
+      max-width: 700px;
+      // background: pink;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+   }
+}
+
+.AnimeCard {
+   max-width: 670px;
+   margin: 20px 0 0 0;
+   background-color: #FED5AA;
+   border-radius: 20px 20px 20px 20px;
+   box-shadow: -1px 2px 2px #BCBCC1;
+}
+
+
+.blockNameAnime{
+   height: 52px;
+   text-align: center;
+   .pNameAnime{
+   padding: 12px 0px;
+   font-family: cursive;
+      font-size: 20px;
+   }
+}
+
+.partitionDiv {
+   height: 20px;
+   max-width: 670px;
+   background-color: #FEBE8B;
+   margin: 1px 0px;
+}
+
+
+.contentAnimeCard{
+   padding: 10px;
+   // background:linear-gradient( #FEC196, #FCC36A,);
+   min-height: 410px;
+}
+
+.AnimeCoverImage {
+   width: 284px;
+   height: 402px;
+   float: left;
+   margin-right: 10px;
+}
+
+
+.pTextContent {
+   padding-top: 6px;
+   
+}
+
+.spanTextContent {
+   font-size: 18px;
+   font-weight: 600;
+   font-family: sans-serif;
+   text-align: justify;
+}

@@ -1,7 +1,10 @@
 .headerUl {
-   background-color: darkcyan;
+   // background-color: #F9DBBD;
+   background:linear-gradient(90deg, #F9DBBD, Orange,);
+   border: solid 5px #D57A66;
+   border-radius: 40px 0 40px 0;
    list-style: none;
-   max-width: 1200px;
+   max-width: 1000px;
    height: 50px;
    display: flex;
    justify-content: space-around;

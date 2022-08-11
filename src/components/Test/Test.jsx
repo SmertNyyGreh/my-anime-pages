@@ -17,18 +17,17 @@ export const Test = () => {
       <div className={styles.mainConteiner}>
          <div className={styles.containsAnimeList}>
             {nameAnime.map((item) => (
-               <div className={styles.AnimeCard}>
+               <div className={styles.AnimeCard} key={item.id}>
                   <img
                      src={item.attributes.posterImage.small}
                      className={styles.AnimeCoverImage}
                      alt=""
-                     key={item.id}
                   />
                </div>
             ))}
             <button
                disabled={page === 0 ? true : false}
-               onClick={() => setPage(page - 20)}
+               onClick={() => setPage(page - 10)}
             >
                pref
             </button>
