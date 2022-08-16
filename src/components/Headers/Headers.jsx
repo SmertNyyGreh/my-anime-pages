@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Headers.module.scss';
-import { Icon } from '@iconify/react';
 
 export const Headers = () => {
   return (
     <header  id='header'>
       <ul className={styles.headerUl}>
-         <li><span className={styles.logoName}>ANime Base<Icon icon="mdi:clover"  width="25" height="25" /></span></li>
+         <li><span className={styles.logoName}>ANime Base</span></li>
          <li>
             <Link  className={styles.headerUlLink} to="/">Anime</Link>
          </li>
