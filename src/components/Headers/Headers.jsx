@@ -6,8 +6,12 @@ export const Headers = () => {
   return (
     <header  id='header'>
       <ul className={styles.headerUl}>
+         <li><span className={styles.logoName}>ANime Base</span></li>
          <li>
             <Link  className={styles.headerUlLink} to="/">Anime</Link>
+         </li>
+         <li>
+            <Link className={styles.headerUlLink} to='/Test'>LINK</Link>
          </li>
          <li>
             <Link  className={styles.headerUlLink} to="/Trending">Top 10 Trending Anime</Link>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './AnimeList.module.scss';
 import { Button } from '@mui/material';
+import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -18,10 +19,10 @@ export const AnimeList = () => {
             genres && `filter[genres]=${genres}`
          }`,
          {
-            headers: {
-               Accept: 'application/vnd.api+json',
-               'Content-Type': 'application/vnd.api+json',
-            },
+            // headers: {
+            //    Accept: 'application/vnd.api+json',
+            //    'Content-Type': 'application/vnd.api+json',
+            // },
          }
       )
          .then((resposne) => resposne.json())
@@ -56,28 +57,31 @@ export const AnimeList = () => {
    };
    return (
       <main className={styles.mainConteiner}>
-         <aside className={styles.asideContainer}>
-            <div className={styles.containerDesription}>
-               <p className={styles.pDescriptionAside}>
-                  <span className={styles.logoName}>Anime Base</span><span> is one</span>
-                  <br />
-                  <span> of the best sites to find</span>
-                  <br />
-                  <span> anime and build your</span>
-                  <br /> <span>own collection</span>
-               </p>
-            </div>
-            <div className={styles.optionButtonContainer}>
-               <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                  <InputLabel id="demo-simple-select-standard-label">
-                     Genre
-                  </InputLabel>
+         <div>
+            {/* <select onChange={setGenresHandler}>
+               <option value="">Genre</option>
+               <option value="Action">Action</option>
+               <option value="Adventure">Adventure</option>
+               <option value="Comedy">Comedy</option>
+               <option value="Space">Drama</option>
+               <option value="Cvi-Fi">Cvi-Fi</option>
+               <option value="Space">Space</option>
+               <option value="Mystery">Mystery</option>
+               <option value="Magic">Magic</option>
+               <option value="Supernatural">Supernatural</option>
+               <option value="Police">Police</option>
+               <option value="Fantasy">Fantasy</option>
+               <option value="Sports">Sports</option>
+            </select> */}
+            <Box sx={{ minWidth: 100 }}>
+               <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Genre</InputLabel>
                   <Select
-                     labelId="demo-simple-select-standard-label"
-                     id="demo-simple-select-standard"
+                     labelId="demo-simple-select-label"
+                     id="demo-simple-select"
                      value={genres}
-                     onChange={handleChange}
                      label="Genres"
+                     onChange={handleChange}
                   >
                      <MenuItem value={'Action'}>Action</MenuItem>
                      <MenuItem value={'Adventure'}>Adventure</MenuItem>
@@ -105,22 +109,9 @@ export const AnimeList = () => {
                      <MenuItem value={'Game'}>Game</MenuItem>
                   </Select>
                </FormControl>
-               <Button
-                  onClick={ascSort}
-                  sx={{
-                     color: '#75624E',
-                     maxHeight: 30,
-                     maxWidth: 64,
-                     position: 'absolute',
-                     right: 10,
-                     bottom: 5,
-                  }}
-                  size="small"
-               >
-                  A-Z
-               </Button>
-            </div>
-         </aside>
+            </Box>
+            <button onClick={ascSort}>A-Z</button>
+         </div>
          <div className={styles.conteinerAnimeList}>
             {nameAnime.map((item) => (
                <div className={styles.contantAnimeList} key={item.id}>
@@ -132,14 +123,7 @@ export const AnimeList = () => {
                               : item.attributes.titles.en}
                         </p>
                      </div>
-                     <div className={styles.partitionDiv}>
-                        <button
-                           onClick={() => console.log(item)}
-                           className={styles.buttonAddFavorite}
-                        >
-                           Text
-                        </button>
-                     </div>
+                     <div className={styles.partitionDiv}></div>
                      <div className={styles.contentAnimeCard}>
                         <div>
                            <img
@@ -196,7 +180,7 @@ export const AnimeList = () => {
                   variant="contained"
                >
                   <div>
-                     <i className="fa-solid fa-chevron-left"></i>
+                     <i class="fa-solid fa-chevron-left"></i>
                   </div>{' '}
                   Previous page
                </Button>
@@ -215,7 +199,7 @@ export const AnimeList = () => {
                >
                   Next page{' '}
                   <div>
-                     <i className="fa-solid fa-chevron-right arrowSVGButton"></i>
+                     <i class="fa-solid fa-chevron-right arrowSVGButton"></i>
                   </div>
                </Button>
             </div>

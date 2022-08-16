@@ -1,8 +1,54 @@
+.asideContainer {
+   // background-color: #FED5AA;
+   // display:flex;
+   max-height: 400px;
+   width: 270px;
+   margin: 20px 10px 0 0;
+}
+
+.containerDesription {
+   border: solid 1px #D57A66;
+   border-radius: 10px;
+   background-color: #FED5AA;
+
+}
+
+.pDescriptionAside {
+   // width: 150px;
+   font-family: 'Noto Sans JP', sans-serif;
+   text-align: center;
+   font-size: 15px;
+
+}
+
+.logoName {
+   font-family: 'Oleo Script Swash Caps', cursive;
+
+}
+
+.optionButtonContainer {
+   background-color: #FED5AA;
+   // background-color: green;
+   position: relative;
+   width: 230px;
+   height: 64px;
+   margin-top: 10px;
+   border-left: solid 3px black;
+   border-right: solid 3px black;
+}
+
 .mainConteiner {
-   max-width: 700px;
+   display: flex;
+   justify-content: space-between;
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.conteinerAnimeList {
+   max-width: 670px;
    // background-color: aquamarine;
    margin: 0 auto;
-   .containsAnimeList {
+   .contantAnimeList {
       max-width: 700px;
       // background: pink;
       margin: 0 auto;
@@ -14,18 +60,18 @@
 .AnimeCard {
    max-width: 670px;
    margin: 20px 0 0 0;
-   background-color: #FED5AA;
+   background-color: #fed5aa;
    border-radius: 20px 20px 20px 20px;
-   box-shadow: -1px 2px 2px #BCBCC1;
+   box-shadow: -1px 2px 2px #bcbcc1;
 }
 
-
-.blockNameAnime{
+.blockNameAnime {
    height: 52px;
    text-align: center;
-   .pNameAnime{
-   padding: 12px 0px;
-   font-family: cursive;
+   color: #de7600;
+   .pNameAnime {
+      padding: 12px 0px;
+      font-family: cursive;
       font-size: 20px;
    }
 }
@@ -33,12 +79,11 @@
 .partitionDiv {
    height: 20px;
    max-width: 670px;
-   background-color: #FEBE8B;
+   background-color: #febe8b;
    margin: 1px 0px;
 }
 
-
-.contentAnimeCard{
+.contentAnimeCard {
    padding: 10px;
    // background:linear-gradient( #FEC196, #FCC36A,);
    min-height: 410px;
@@ -51,10 +96,8 @@
    margin-right: 10px;
 }
 
-
 .pTextContent {
    padding-top: 6px;
-   
 }
 
 .spanTextContent {
@@ -62,4 +105,19 @@
    font-weight: 600;
    font-family: sans-serif;
    text-align: justify;
+}
+
+.pSynopsis {
+   font-size: 14px;
+}
+
+.divButtonChangePage {
+   max-width: 670px;
+   // background-color: #fed5aa;
+   display: flex;
+   justify-content: space-around;
+}
+
+.buttonAddFavorite {
+   
 }
