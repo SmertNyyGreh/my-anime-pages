@@ -1,16 +1,23 @@
+.mainConteiner {
+   display: flex;
+   justify-content: space-between;
+   max-width: 900px;
+   margin: 0 auto;
+}
+
 .asideContainer {
-   // background-color: #FED5AA;
-   // display:flex;
    max-height: 400px;
    width: 270px;
    margin: 20px 10px 0 0;
+   @media screen and (max-width: 760px) {
+      display: none;
+   }
 }
 
 .containerDesription {
-   border: solid 1px #D57A66;
+   border: solid 1px #d57a66;
    border-radius: 10px;
-   background-color: #FED5AA;
-
+   background-color: #fed5aa;
 }
 
 .pDescriptionAside {
@@ -18,31 +25,30 @@
    font-family: 'Noto Sans JP', sans-serif;
    text-align: center;
    font-size: 15px;
-
 }
 
 .logoName {
    font-family: 'Oleo Script Swash Caps', cursive;
-
 }
 
 .optionButtonContainer {
-   background-color: #FED5AA;
+   background-color: #fed5aa;
    // background-color: green;
    position: relative;
-   width: 230px;
    height: 64px;
    margin-top: 10px;
    border-left: solid 3px black;
    border-right: solid 3px black;
 }
 
-.mainConteiner {
-   display: flex;
-   justify-content: space-between;
-   max-width: 800px;
+.averageContent {
+   max-width: 670px;
+   // background-color: #d57a66;
    margin: 0 auto;
+
 }
+
+
 
 .conteinerAnimeList {
    max-width: 670px;
@@ -63,6 +69,9 @@
    background-color: #fed5aa;
    border-radius: 20px 20px 20px 20px;
    box-shadow: -1px 2px 2px #bcbcc1;
+   @media screen and (max-width: 760px) {
+   margin: 0;
+   }
 }
 
 .blockNameAnime {

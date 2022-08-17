@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './AnimeList.module.scss';
 import { Button } from '@mui/material';
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -54,12 +55,14 @@ export const AnimeList = () => {
       setGenres(e.target.value);
       setPage(0);
    };
+
    return (
       <main className={styles.mainConteiner}>
          <aside className={styles.asideContainer}>
             <div className={styles.containerDesription}>
                <p className={styles.pDescriptionAside}>
-                  <span className={styles.logoName}>Anime Base</span><span> is one</span>
+                  <span className={styles.logoName}>Anime Base</span>
+                  <span> is one</span>
                   <br />
                   <span> of the best sites to find</span>
                   <br />
@@ -121,103 +124,95 @@ export const AnimeList = () => {
                </Button>
             </div>
          </aside>
-         <div className={styles.conteinerAnimeList}>
-            {nameAnime.map((item) => (
-               <div className={styles.contantAnimeList} key={item.id}>
-                  <section className={styles.AnimeCard}>
-                     <div className={styles.blockNameAnime}>
-                        <p className={styles.pNameAnime}>
-                           {item.attributes.titles.en === undefined
-                              ? item.attributes.titles['en_jp']
-                              : item.attributes.titles.en}
-                        </p>
-                     </div>
-                     <div className={styles.partitionDiv}>
-                        <button
-                           onClick={() => console.log(item)}
-                           className={styles.buttonAddFavorite}
-                        >
-                           Text
-                        </button>
-                     </div>
-                     <div className={styles.contentAnimeCard}>
-                        <div>
-                           <img
-                              src={item.attributes.posterImage.small}
-                              className={styles.AnimeCoverImage}
-                              alt=""
-                           />
+         <div className={styles.averageContent}>
+            <BurgerMenu />
+            <div className={styles.conteinerAnimeList}>
+               {nameAnime.map((item) => (
+                  <div className={styles.contantAnimeList} key={item.id}>
+                     <section className={styles.AnimeCard}>
+                        <div className={styles.blockNameAnime}>
+                           <p className={styles.pNameAnime}>
+                              {item.attributes.titles.en === undefined
+                                 ? item.attributes.titles['en_jp']
+                                 : item.attributes.titles.en}
+                           </p>
                         </div>
-                        <p className={styles.pTextContent}>
-                           <span className={styles.spanTextContent}>
-                              Number of series:
-                           </span>{' '}
-                           {item.attributes.episodeCount === null
-                              ? `Episodes are still coming out`
-                              : item.attributes.episodeCount}
-                        </p>
-                        <p className={styles.pTextContent}>
-                           <span className={styles.spanTextContent}>
-                              Age ratting:
-                           </span>{' '}
-                           {item.attributes.ageRating}
-                        </p>
-                        <p className={styles.pTextContent}>
-                           <span className={styles.spanTextContent}>Type:</span>{' '}
-                           {item.attributes.subtype}
-                        </p>
-                        <p className={styles.pTextContent}>
-                           <span className={styles.spanTextContent}>
-                              Average Rating:
-                           </span>{' '}
-                           {item.attributes.averageRating}
-                           {'%'}
-                        </p>
-                        <p className={styles.pSynopsis}>
-                           {item.attributes.synopsis}
-                        </p>
-                     </div>
-                  </section>
-               </div>
-            ))}
-            <div className={styles.divButtonChangePage}>
-               <Button
-                  sx={{
-                     height: '29px',
-                     backgroundColor: '#FEB86E',
-                     color: '#FF5900',
-                     border: 'solid 1px orange',
-                     margin: '10px',
-                     borderRadius: '12px',
-                     position: 'reletive',
-                  }}
-                  onClick={onClickPrevBtn}
-                  disabled={page === 0 ? true : false}
-                  variant="contained"
-               >
-                  <div>
-                     <i className="fa-solid fa-chevron-left"></i>
-                  </div>{' '}
-                  Previous page
-               </Button>
-               <Button
-                  sx={{
-                     height: '29px',
-                     backgroundColor: '#FEB86E',
-                     color: '#FF5900',
-                     border: 'solid 1px orange',
-                     margin: '10px',
-                     borderRadius: '12px',
-                     position: 'reletive',
-                  }}
-                  onClick={onClickNextBtn}
-                  variant="contained"
-               >
-                  Next page{' '}
-                  <div>
-                     <i className="fa-solid fa-chevron-right arrowSVGButton"></i>
+                        <div className={styles.partitionDiv}></div>
+                        <div className={styles.contentAnimeCard}>
+                           <div>
+                              <img
+                                 src={item.attributes.posterImage.small}
+                                 className={styles.AnimeCoverImage}
+                                 alt=""
+                              />
+                           </div>
+                           <p className={styles.pTextContent}>
+                              <span className={styles.spanTextContent}>
+                                 Number of series:
+                              </span>{' '}
+                              {item.attributes.episodeCount === null
+                                 ? `Episodes are still coming out`
+                                 : item.attributes.episodeCount}
+                           </p>
+                           <p className={styles.pTextContent}>
+                              <span className={styles.spanTextContent}>
+                                 Age ratting:
+                              </span>{' '}
+                              {item.attributes.ageRating}
+                           </p>
+                           <p className={styles.pTextContent}>
+                              <span className={styles.spanTextContent}>
+                                 Type:
+                              </span>{' '}
+                              {item.attributes.subtype}
+                           </p>
+                           <p className={styles.pTextContent}>
+                              <span className={styles.spanTextContent}>
+                                 Average Rating:
+                              </span>{' '}
+                              {item.attributes.averageRating}
+                              {'%'}
+                           </p>
+                           <p className={styles.pSynopsis}>
+                              {item.attributes.synopsis}
+                           </p>
+                        </div>
+                     </section>
                   </div>
-               </Button>
+               ))}
+               <div className={styles.divButtonChangePage}>
+                  <Button
+                     sx={{
+                        height: '29px',
+                        backgroundColor: '#FEB86E',
+                        color: '#FF5900',
+                        border: 'solid 1px orange',
+                        margin: '10px',
+                        borderRadius: '12px',
+                        position: 'reletive',
+                     }}
+                     onClick={onClickPrevBtn}
+                     disabled={page === 0 ? true : false}
+                     variant="contained"
+                  >
+                     Previous page
+                  </Button>
+                  <Button
+                     sx={{
+                        height: '29px',
+                        backgroundColor: '#FEB86E',
+                        color: '#FF5900',
+                        border: 'solid 1px orange',
+                        margin: '10px',
+                        borderRadius: '12px',
+                        position: 'reletive',
+                     }}
+                     onClick={onClickNextBtn}
+                     variant="contained"
+                  >
+                     Next page
+                  </Button>
+               </div>
             </div>
          </div>
       </main>
