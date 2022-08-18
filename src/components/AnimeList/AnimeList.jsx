@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styles from './AnimeList.module.scss';
 import { Button } from '@mui/material';
-import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -108,6 +110,7 @@ export const AnimeList = () => {
                      <MenuItem value={'Game'}>Game</MenuItem>
                   </Select>
                </FormControl>
+               <div className={styles.test}>
                <Button
                   onClick={ascSort}
                   sx={{
@@ -122,10 +125,10 @@ export const AnimeList = () => {
                >
                   A-Z
                </Button>
+               </div>
             </div>
          </aside>
          <div className={styles.averageContent}>
-            <BurgerMenu />
             <div className={styles.conteinerAnimeList}>
                {nameAnime.map((item) => (
                   <div className={styles.contantAnimeList} key={item.id}>
@@ -195,7 +198,7 @@ export const AnimeList = () => {
                      disabled={page === 0 ? true : false}
                      variant="contained"
                   >
-                     Previous page
+                     <div><FontAwesomeIcon icon={faAngleLeft} /></div> Previous page
                   </Button>
                   <Button
                      sx={{
@@ -210,7 +213,8 @@ export const AnimeList = () => {
                      onClick={onClickNextBtn}
                      variant="contained"
                   >
-                     Next page
+                     Next page{' '}
+                     <div><FontAwesomeIcon icon={faAngleRight} /></div>
                   </Button>
                </div>
             </div>

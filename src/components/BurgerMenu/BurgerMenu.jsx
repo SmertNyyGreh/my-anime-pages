@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './BurgerMenu.module.scss';
 
 export const BurgerMenu = ({ openBurgerMenu }) => {
-   const [open, setOpen] = useState('false');
+   const [open, setOpen] = useState(false);
    const changeClass = (e) => {
       setOpen(!open);
       e.stopPropagation()
@@ -11,7 +11,7 @@ export const BurgerMenu = ({ openBurgerMenu }) => {
       <div className={styles.iconBurgerMenu}>
          <div
             className={`${styles.iconBurgerMenu} ${
-               !open ? styles.change : null
+               open ? styles.change : null
             }`}
             onClick={(e)=> changeClass(e) }
          >

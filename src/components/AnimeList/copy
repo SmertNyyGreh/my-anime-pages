@@ -137,14 +137,7 @@ export const AnimeList = () => {
                                  : item.attributes.titles.en}
                            </p>
                         </div>
-                        <div className={styles.partitionDiv}>
-                           {/* <button
-                              onClick={() => console.log(item)}
-                              className={styles.buttonAddFavorite}
-                           >
-                              Text
-                           </button> */}
-                        </div>
+                        <div className={styles.partitionDiv}></div>
                         <div className={styles.contentAnimeCard}>
                            <div>
                               <img
