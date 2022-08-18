@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import styles from './AnimeList.module.scss';
+import { Link } from 'react-router-dom';
+
+import { url } from '../../url/url';
+
 import { Button } from '@mui/material';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
-import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 export const AnimeList = () => {
-   const url = 'https://kitsu.io/api/edge';
    const [nameAnime, setNameAnime] = useState([]);
    const [page, setPage] = useState(0);
    const [genres, setGenres] = useState('');
@@ -29,7 +32,6 @@ export const AnimeList = () => {
       )
          .then((resposne) => resposne.json())
          .then((data) => setNameAnime(data.data));
-      // .then((data) => console.log(data.data));
    }, [page, genres]);
 
    const scrollTop = () => {
@@ -110,21 +112,21 @@ export const AnimeList = () => {
                      <MenuItem value={'Game'}>Game</MenuItem>
                   </Select>
                </FormControl>
-               <div className={styles.test}>
-               <Button
-                  onClick={ascSort}
-                  sx={{
-                     color: '#75624E',
-                     maxHeight: 30,
-                     maxWidth: 64,
-                     position: 'absolute',
-                     right: 10,
-                     bottom: 5,
-                  }}
-                  size="small"
-               >
-                  A-Z
-               </Button>
+               <div className={styles.divButtonSort}>
+                  <Button
+                     onClick={ascSort}
+                     sx={{
+                        color: '#75624E',
+                        maxHeight: 30,
+                        maxWidth: 64,
+                        position: 'absolute',
+                        right: 10,
+                        bottom: 5,
+                     }}
+                     size="small"
+                  >
+                     A-Z
+                  </Button>
                </div>
             </div>
          </aside>
@@ -134,11 +136,17 @@ export const AnimeList = () => {
                   <div className={styles.contantAnimeList} key={item.id}>
                      <section className={styles.AnimeCard}>
                         <div className={styles.blockNameAnime}>
-                           <p className={styles.pNameAnime}>
-                              {item.attributes.titles.en === undefined
-                                 ? item.attributes.titles['en_jp']
-                                 : item.attributes.titles.en}
-                           </p>
+                           <Link
+                              to={`/OneAnime/${item.id}`}
+                              className={styles.linkNameAnime}
+                              style={{ textDecoration: 'none' }}
+                           >
+                              <p className={styles.pNameAnime}>
+                                 {item.attributes.titles.en === undefined
+                                    ? item.attributes.titles['en_jp']
+                                    : item.attributes.titles.en}
+                              </p>
+                           </Link>
                         </div>
                         <div className={styles.partitionDiv}></div>
                         <div className={styles.contentAnimeCard}>
@@ -198,7 +206,10 @@ export const AnimeList = () => {
                      disabled={page === 0 ? true : false}
                      variant="contained"
                   >
-                     <div><FontAwesomeIcon icon={faAngleLeft} /></div> Previous page
+                     <div>
+                        <FontAwesomeIcon icon={faAngleLeft} />
+                     </div>{' '}
+                     Previous page
                   </Button>
                   <Button
                      sx={{
@@ -214,7 +225,9 @@ export const AnimeList = () => {
                      variant="contained"
                   >
                      Next page{' '}
-                     <div><FontAwesomeIcon icon={faAngleRight} /></div>
+                     <div>
+                        <FontAwesomeIcon icon={faAngleRight} />
+                     </div>
                   </Button>
                </div>
             </div>

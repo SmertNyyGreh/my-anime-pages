@@ -11,7 +11,7 @@ export const AppRoutes = () => {
       <Routes>
          <Route path='/' element={<AnimeList />} />
          <Route path="/Trending" element={<TrendingAnime />} />
-         <Route path="/OneAnime" element={<OneAnime />} />
+         <Route path="/OneAnime/:id" element={<OneAnime />} />
          <Route path="/*" element={<Development />} />
       </Routes>
    );
