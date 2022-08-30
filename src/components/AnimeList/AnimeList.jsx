@@ -179,7 +179,7 @@ export const AnimeList = () => {
                            </p>
                            <p className={styles.pTextContent}>
                               <span className={styles.spanTextContent}>
-                                 Average Rating:
+                                 Average Rating+:
                               </span>{' '}
                               {item.attributes.averageRating}
                               {'%'}
